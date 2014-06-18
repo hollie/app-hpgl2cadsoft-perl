@@ -30,7 +30,8 @@ ok $app, 'object created';
 ok $app->isa('App::HPGL2Cadsoft'), 'and it is the right class';
 
 # Check if parsing the example HPGL file yields the correct result
-my ($lines, $skipped) = $app->_parse_hpgl();
+my ($lines, $skipped);
+warning_like { ($lines, $skipped) = $app->_parse_hpgl() } qr/Encountered command that was not parsed: 'PU'/, "HPGL parser";
 is $lines, 506, 'parsed HPGL #lines correctly';
 is $skipped, 81, 'skipped correct number of empty movemens';
 

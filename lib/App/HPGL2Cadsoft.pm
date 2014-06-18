@@ -83,6 +83,10 @@ sub _parse_hpgl {
     my ( $pos_start, $pos_end );
 
     foreach $command (@commands) {
+        
+        if ( $command =~ /\s+/) {
+            next;
+        }
 
         if ( $command =~ /PU(\d+),(\d+)/ ) {
             $pos_start = Grid::Coord->new( $2, $1 );
@@ -115,7 +119,7 @@ sub _parse_hpgl {
             next;
         }
 
-        carp "Encountered command that was not parsed: $command\n";
+        carp "Encountered command that was not parsed: '$command'\n";
     }
 
     my $line_count = scalar(@lines);
@@ -246,7 +250,7 @@ no Moose;
 
 =head1 SYNOPSIS
 
-my $object = App::HPGL2Cadsoft->new(parameter => 'text.txt');
+my $object = App::HPGL2Cadsoft->new(input_file => 'logo.hpgl', output_file => 'logo.scr', scaling_factor => 342);
 
 =head1 DESCRIPTION
 
@@ -261,15 +265,26 @@ This constructor returns a new App::HPGL2Cadsoft object. Supported parameters ar
 
 =over
 
-=item parameters
+=item input_file
 
-Describe
+This is a required parameter that contains the name of the HPGL file that needs to be converted to a Cadsoft Eagle script.
+
+= item output_file
+
+This is a required parameter that contains the name of the output script
+
+=item scaling_factor
+
+The scaling factor to apply on the HPGL script to convert the script to millimeters. Use this factor to make the
+Cadsoft Eagle output smaller or larger.
+To help you in selecting the correct scaling factor this module will report the bounding box of the output.
 
 =back
 
-=head2 C<calculate_bbox()>
+=head2 C<run()>
 
-Calculate the bounding box that encloses the entire drawing
+This function runs all steps required to read and scale the HPGL input file and to write the output to the 
+Cadsoft Eagle script.
 
 =head2 BUILD
 
