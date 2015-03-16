@@ -1,3 +1,5 @@
+[![Build status](https://travis-ci.org/hollie/app-hpgl2cadsoft-perl.svg?branch=releases)](https://travis-ci.org/hollie/app-hpgl2cadsoft-perl)
+
 NAME
     App::HPGL2Cadsoft - module to convert a HPGL file into a Cadsoft Eagle
     script
