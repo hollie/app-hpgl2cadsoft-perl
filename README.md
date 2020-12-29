@@ -1,4 +1,4 @@
-[![Build status](https://travis-ci.org/hollie/app-hpgl2cadsoft-perl.svg?branch=releases)](https://travis-ci.org/hollie/app-hpgl2cadsoft-perl)[![CPAN version](https://badge.fury.io/pl/App-HPGL2Cadsoft.svg)](http://badge.fury.io/pl/App-HPGL2Cadsoft)
+[![Build status](https://github.com/hollie/app-hpgl2cadsoft-perl/workflows/CI%20on%20master/badge.svg)[![CPAN version](https://badge.fury.io/pl/App-HPGL2Cadsoft.svg)](http://badge.fury.io/pl/App-HPGL2Cadsoft)
 
 # NAME
 **App::HPGL2Cadsoft** - module to convert a HPGL file into a Cadsoft Eagle
