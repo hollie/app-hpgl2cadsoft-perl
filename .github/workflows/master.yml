@@ -25,4 +25,4 @@ jobs:
       - run: cpanm install Dist::Zilla
       - run: dzil authordeps --missing | cpanm
       - run: dzil listdeps | cpanm
-      - run: prove -lrv t
+      - run: RELEASE_TESTING=1 dzil prove
