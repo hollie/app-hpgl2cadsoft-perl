@@ -1,3 +1,6 @@
+[![Actions Status](https://github.com/hollie/app-hpgl2cadsoft-perl/workflows/CI%20on%20master/badge.svg)](https://github.com/hollie/app-hpgl2cadsoft-perl/actions)
+[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/App-HPGL2Cadsoft-0.01)](https://cpancoverbadge.perl-services.de/App-HPGL2Cadsoft-0.01)
+
 # SYNOPSIS
 
 my $object = App::HPGL2Cadsoft->new(input\_file => 'logo.hpgl', output\_file => 'logo.scr', scaling\_factor => 342);
